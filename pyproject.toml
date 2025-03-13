@@ -1,30 +1,43 @@
-[tool.poetry]
+[project]
 name = "valiant-valkyries"
 version = "0.1.0"
 description = "Python Discode Code Jam Solution by The Valiant Valkyries"
-authors = ["vv"]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = "^3.10"
+authors = [
+    {name = "legosiv", email = "85926950+legosiv@users.noreply.github.com"}
+]
+urls = { homepage = "https://github.com/jalwn/valiant-valkyries" }
 
-packages = [
-    { include = "backend" }
+# dependencies = [
+#     "fastapi==0.79.0",
+#     "uvicorn[standard]~=0",
+#     # "uvicorn[standard]~=0; sys_platform != 'win32'",
+#     # "uvicorn~=0; sys_platform == 'win32'"
+# ]
+
+dependencies = [
+    "fastapi==0.79.0",
+    "uvicorn[standard]==0.30.5",
+    # "httptools",
+    # "websockets",
+    # "watchgod"
 ]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-fastapi= "0.79.0"
-uvicorn = {version = "^0", extras = ["standard"]}
-
-[tool.poetry.dev-dependencies]
-flake8 = "~=4.0.1"
-isort = "~=5.10.1"
-pre-commit = "~=2.17.0"
-flake8-annotations = "~=2.9.0"
-flake8-bandit = "~=3.0.0"
-flake8-docstrings = "~=1.6.0"
-flake8-isort = "~=4.1.2.post0"
-
-[tool.poetry.scripts]
+[project.scripts]
 game = "backend.main:start"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[project.optional-dependencies]
+flake8 = [ "flake8~=4.0.1" ]
+isort = [ "isort~=5.10.1" ]
+pre-commit = [ "pre-commit~=2.17.0" ]
+flake8-annotations = [ "flake8-annotations~=2.9.0" ]
+flake8-bandit = [ "flake8-bandit~=3.0.0" ]
+flake8-docstrings = [ "flake8-docstrings~=1.6.0" ]
+flake8-isort = [ "flake8-isort~=4.1.2.post0" ]
+
+[tool.poetry]
+packages = [
+    { include = "backend" },
+]
