@@ -11,6 +11,7 @@ It uses the [uvicorn](https://www.uvicorn.org/) library as the server applicatio
 ## Development
 
 1. Install [poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer)
+    *Note: The project has been update to work with Poetry 2*
 
 2. Change config for venv to be created in project instead of cache folder
    ```sh
